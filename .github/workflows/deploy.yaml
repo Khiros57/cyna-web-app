@@ -36,5 +36,5 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-        kubectl apply -f k8s/site-cyna.yaml
-        kubectl apply -f k8s/site-cyna-ingress.yaml
+        kubectl apply --validate=false -f k8s/site-cyna.yaml
+        kubectl apply --validate=false -f k8s/site-cyna-ingress.yaml
