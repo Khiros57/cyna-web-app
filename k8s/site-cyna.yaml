@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site-cyna
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: site-cyna
+  template:
+    metadata:
+      labels:
+        app: site-cyna
+    spec:
+      containers:
+      - name: nginx
+        image: khiras57/site-cyna:latest
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: site-cyna-service
+spec:
+  selector:
+    app: site-cyna
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

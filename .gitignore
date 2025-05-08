@@ -1,0 +1,24 @@
+# Fichiers temporaires
+*.log
+*.tmp
+
+# Docker
+.dockerignore
+
+# Configs locales
+.kube/
+*.kubeconfig
+.env
+.env.*
+
+# Dossiers d'éditeurs
+.vscode/
+.idea/
+.DS_Store
+
+# Python, Node (au cas où)
+__pycache__/
+node_modules/
+
+# Fichiers sensibles à exclure du dépôt
+secrets.yaml
